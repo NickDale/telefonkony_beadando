@@ -1,3 +1,3 @@
 # TESZT felhasználók:
->user - password
->teszt1 - pass1
++user - password
++teszt1 - pass1
