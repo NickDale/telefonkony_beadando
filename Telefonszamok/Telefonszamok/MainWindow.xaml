@@ -5,24 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Telefonszamok"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Telefonszám nyilvántartó" Height="350" Width="525">
     <Grid>
-     
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        
-        <DataGrid x:Name="dgAdatok" Grid.Row="1" ItemsSource="{Binding}"/>
-        
-        <Menu Grid.Row="0">
-            <MenuItem Header="File">
-                <MenuItem x:Name="miExit" Header="Kilépés" Click="miExit_Click"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Műveletek">
-                <MenuItem x:Name="miMindenAdat" Header="Adatok" Click="miMindenAdat_Click"></MenuItem>
-                <MenuItem x:Name="miHelyseg" Header="Helységek" Click="miHelyseg_Click"></MenuItem>
-            </MenuItem>
-        </Menu>
+
+        <StackPanel>
+            <Menu Grid.Row="0">
+                <MenuItem x:Name="miFajl" Header="Fájl" >
+                    <MenuItem x:Name="miMentes" Header="Mentés" Click="miMentes_Click"/>
+                    <Separator/>
+                    <MenuItem x:Name="miKilepes" Header="Kilépés" Click="miKilepes_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="miLekerdezes" Header="Lekérdezés">
+                    <MenuItem x:Name="miMindenAdat" Header="Minden adat táblázatosan" Click="miMindenAdat_Click" />
+                    <MenuItem x:Name="miHelysegek" Header="Helységek" Click="miHelysegek_Click" />
+                </MenuItem>
+                <MenuItem x:Name="miAdatFelvitelModositas" Header="Adatfelvitel/Módosítás">
+                    <MenuItem x:Name="miHelysegekAM" Header="Helységek" Click="miHelysegekAM_Click"/>
+                </MenuItem>
+            </Menu>
+
+            <DataGrid x:Name="dgAdatok" Grid.Row="1" ItemsSource="{Binding}"/>
+
+            <Grid x:Name="grHelyseg" Visibility="Hidden" Margin="0,10,0,0" DataContext="{Binding}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Keresés irányítószám alapján" Grid.Row="0" Grid.Column="0"/>
+                <ComboBox x:Name="cbIrsz" ItemsSource="{Binding}" DisplayMemberPath="IRSZ" Grid.Row="0" Grid.Column="1" Margin="5" SelectionChanged="cbIrsz_SelectionChanged" IsSynchronizedWithCurrentItem="True"/>
+                <Label Content="Keresés helységnév alapján" Grid.Row="1" Grid.Column="0" />
+                <ComboBox x:Name="cbHelysegnev" ItemsSource="{Binding}" DisplayMemberPath="nev" Grid.Row="1" Grid.Column="1" Margin="5" IsSynchronizedWithCurrentItem="True"/>
+                <Label Content="Irányítószám" Grid.Row="2" Grid.Column="0"/>
+                <TextBox x:Name="tbIrsz" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                <Label Content="Helységnév" Grid.Row="3" Grid.Column="0"/>
+                <TextBox x:Name="tbHelysegnev" Grid.Row="3" Grid.Column="1" Margin="5"/>
+                
+                <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btRogzit" Content="Módosított adatpár rögzítése" Click="btRogzit_Click" Margin="50,50,10,10"/>
+                    <Button x:Name="btUjHelyseg" Content="Új helység" Margin="50,50,10,10" Click="btUjHelyseg_Click"/>
+                    <Button x:Name="btVissza" Content="Vissza" Click="btVissza_Click" Margin="50,50,10,10" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+
     </Grid>
 </Window>

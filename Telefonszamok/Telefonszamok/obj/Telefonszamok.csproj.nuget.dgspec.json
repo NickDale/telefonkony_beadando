@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GAMF\\viz_prog\\wpf\\telefonkonyv-beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj": {}
+    "C:\\Users\\Norbert\\Desktop\\GAMF\\4.félév\\vizprog\\telefonkony_beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj": {}
   },
   "projects": {
-    "D:\\GAMF\\viz_prog\\wpf\\telefonkonyv-beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj": {
+    "C:\\Users\\Norbert\\Desktop\\GAMF\\4.félév\\vizprog\\telefonkony_beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GAMF\\viz_prog\\wpf\\telefonkonyv-beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj",
+        "projectUniqueName": "C:\\Users\\Norbert\\Desktop\\GAMF\\4.félév\\vizprog\\telefonkony_beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj",
         "projectName": "Telefonszamok",
-        "projectPath": "D:\\GAMF\\viz_prog\\wpf\\telefonkonyv-beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj",
-        "packagesPath": "C:\\Users\\Felhasznalo\\.nuget\\packages\\",
-        "outputPath": "D:\\GAMF\\viz_prog\\wpf\\telefonkonyv-beadando\\Telefonszamok\\Telefonszamok\\obj\\",
+        "projectPath": "C:\\Users\\Norbert\\Desktop\\GAMF\\4.félév\\vizprog\\telefonkony_beadando\\Telefonszamok\\Telefonszamok\\Telefonszamok.csproj",
+        "packagesPath": "C:\\Users\\Norbert\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Norbert\\Desktop\\GAMF\\4.félév\\vizprog\\telefonkony_beadando\\Telefonszamok\\Telefonszamok\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Felhasznalo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Norbert\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,6 +50,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"

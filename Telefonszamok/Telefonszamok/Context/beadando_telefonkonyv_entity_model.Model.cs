@@ -22,6 +22,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata;
 using enTelefonkony;
+using System.Configuration;
 
 namespace cnTelefonkony
 {
@@ -47,7 +48,7 @@ namespace cnTelefonkony
                 (!optionsBuilder.Options.Extensions.OfType<RelationalOptionsExtension>().Any(ext => !string.IsNullOrEmpty(ext.ConnectionString) || ext.Connection != null) &&
                  !optionsBuilder.Options.Extensions.Any(ext => !(ext is RelationalOptionsExtension) && !(ext is CoreOptionsExtension))))
             {
-                optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=telefonszamok;Integrated Security=False;Persist Security Info=True;User ID=user;Password=password;TrustServerCertificate=True");
+                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["db_connection"].ConnectionString);
             }
             CustomizeConfiguration(ref optionsBuilder);
             base.OnConfiguring(optionsBuilder);
